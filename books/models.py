@@ -4,7 +4,7 @@ from django.utils.timezone import now
 
 class Book(models.Model):
     title = models.CharField(max_length=150)
-    author = models.ManyToManyField("Author",related_name="books")
+    authors = models.ManyToManyField("Author",related_name="books")
     review = models.TextField(blank=True, null=True)
     date_reviewed = models.DateTimeField(blank=True, null=True)
     is_favourite = models.BooleanField(default=False, verbose_name="Favourite?")
